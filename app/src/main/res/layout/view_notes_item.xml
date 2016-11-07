@@ -2,22 +2,39 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:cardCornerRadius="@dimen/view_notes_item_corner_radius"
     android:id="@+id/card_view"
     android:padding="@dimen/view_notes_item_padding"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/view_notes_item_height"
     app:cardElevation="5dp"
-    android:layout_margin="0dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="8dp"
+    app:cardBackgroundColor="@android:color/white"
+    android:backgroundTint="@android:color/holo_green_dark"
+
+    android:layout_margin="5dp"
     android:layout_centerInParent="true">
 
     <TextView
-        android:layout_gravity="center"
-        android:textSize="@dimen/view_notes_item_title_text_size"
-        android:textColor="@android:color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/title_text_view"/>
+        style="@style/PrimaryTextViewStyle"
+        tools:text="primary text"
+        android:id="@+id/primary_text_view"/>
+
+    <TextView
+        style="@style/DefaultTextViewStyle"
+        tools:text="secondary text secondary text secondary text secondary text secondary text secondary text secondary text secondary text secondary text secondary text secondary text "
+        android:layout_gravity="bottom"
+        android:id="@+id/secondary_text_view"/>
+
+    <TextView
+        style="@style/SecondaryTextViewStyle"
+        android:id="@+id/date_text_view"
+        android:layout_gravity="right"
+        tools:text="text"
+        />
+
 
 
 

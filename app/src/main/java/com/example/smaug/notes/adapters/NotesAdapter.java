@@ -1,28 +1,30 @@
 package com.example.smaug.notes.adapters;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.smaug.notes.R;
+import com.example.smaug.notes.model.Note;
 
 import java.util.List;
-import java.util.StringTokenizer;
 
-import javax.sql.DataSource;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Smaug on 31.10.2016.
  */
 
-public class NotesAdapter extends RecyclerView.Adapter <NotesAdapter.NotesViewHolder>{
-    private List<String > dataSource = null;
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
 
-    public void setDataSource(List<String> dataSource){
-        this.dataSource = dataSource;
+
+    private List<Note> mDataSource = null;
+
+    public void setDataSource(List<Note> dataSource) {
+        this.mDataSource = dataSource;
         notifyDataSetChanged(); //оповещение о том, что данные изменились, нужно перерисовать
     }
 
@@ -35,31 +37,43 @@ public class NotesAdapter extends RecyclerView.Adapter <NotesAdapter.NotesViewHo
 
     @Override
     public void onBindViewHolder(NotesViewHolder holder, int position) {
-        String title = dataSource.get(position);
-        holder.bindView(title);
+        Note note = mDataSource.get(position);
+        holder.bindView(note);
     }
 
     @Override
     public int getItemCount() {
-        if (dataSource == null){
+        if (mDataSource == null) {
             return 0;
-        }
-        else {
-            return dataSource.size();
+        } else {
+            return mDataSource.size();
         }
 
     }
 
     static class NotesViewHolder extends RecyclerView.ViewHolder {
-        private TextView titleTextView = null;
+
+        @BindView(R.id.primary_text_view)
+        protected TextView mPrimaryTextView;
+        @BindView(R.id.secondary_text_view)
+        protected TextView mSecondaryTextView;
+        @BindView(R.id.date_text_view)
+        protected TextView mDateTextView;
+
+
+        //private TextView titleTextView = null;
 
         public NotesViewHolder(View itemView) {
             super(itemView);
-            titleTextView = (TextView) itemView.findViewById(R.id.title_text_view);
+            ButterKnife.bind(this, itemView);
+            //titleTextView = (TextView) itemView.findViewById(R.id.primary_text_view);
 
         }
-        void bindView(String title){
-            titleTextView.setText(title);
+
+        void bindView(Note note) {
+            mPrimaryTextView.setText(note.getTitle());
+            mSecondaryTextView.setText(note.getText());
+            mDateTextView.setText(String.valueOf(note.getTime()));
         }
     }
 }

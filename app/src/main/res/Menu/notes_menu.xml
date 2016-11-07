@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/new_game"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/new_game"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu1"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/menu1" />
+    <item
+        android:id="@+id/menu2"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/menu2" />
+    <item
+        android:id="@+id/menu3"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/menu3"
+        />
+
+</menu>

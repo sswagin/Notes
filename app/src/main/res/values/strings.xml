@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Notes</string>
+    <string name="new_game">String1</string>
+    <string name="menu1">Menu1</string>
+    <string name="menu2">Menu2</string>
+    <string name="menu3">Menu3</string>
+    <string name="menu4">menu4-value</string>
+
 </resources>
