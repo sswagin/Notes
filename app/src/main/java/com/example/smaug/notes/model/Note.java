@@ -7,7 +7,12 @@ package com.example.smaug.notes.model;
 public class Note {
     private String mTitle = null;
     private String mText = null;
-    private long mTime = 0;
+    private String mText2 = null;
+    private String mTime = null;
+
+    public String getText2() {   return mText2;    }
+
+    public void setText2(String mText2) {        this.mText2 = mText2;    }
 
     public String getTitle() {
         return mTitle;
@@ -25,11 +30,11 @@ public class Note {
         this.mText = mText;
     }
 
-    public long getTime() {
+    public String getTime() {
         return mTime;
     }
 
-    public void setTime(long mTime) {
+    public void setTime(String mTime) {
         this.mTime = mTime;
     }
 

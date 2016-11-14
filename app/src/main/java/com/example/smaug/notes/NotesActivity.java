@@ -14,8 +14,12 @@ import android.view.MenuItem;
 import com.example.smaug.notes.adapters.NotesAdapter;
 import com.example.smaug.notes.model.Note;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,10 +52,16 @@ public class NotesActivity extends AppCompatActivity {
         List<Note> dataSource = new ArrayList<>();
 
         for (int i = 0; i < 20; i++){
+            long yourmillis = System.currentTimeMillis();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm", Locale.US);
+            GregorianCalendar calendar = new GregorianCalendar(TimeZone.getTimeZone("US/Central"));
+            calendar.setTimeInMillis(yourmillis);
+
             Note note = new Note();
-            note.setTitle("Title:"+i);
+            note.setTitle("Note #"+i);
             note.setText("  text: " + i);
-            note.setTime(System.currentTimeMillis());
+            note.setText2("  text2: " + i*2);
+            note.setTime(simpleDateFormat.format(calendar.getTime()));
             dataSource.add(note);
         }
         recyclerView.setAdapter(adapter);

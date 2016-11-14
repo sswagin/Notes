@@ -8,13 +8,13 @@
     android:padding="@dimen/view_notes_item_padding"
     android:layout_width="match_parent"
     android:layout_height="@dimen/view_notes_item_height"
-    app:cardElevation="5dp"
+    app:cardElevation="0dp"
     app:cardUseCompatPadding="true"
     app:contentPadding="8dp"
     app:cardBackgroundColor="@android:color/white"
     android:backgroundTint="@android:color/holo_green_dark"
 
-    android:layout_margin="5dp"
+    android:layout_margin="2dp"
     android:layout_centerInParent="true">
 
     <TextView
@@ -27,6 +27,13 @@
         tools:text="secondary text secondary text secondary text secondary text secondary text secondary text secondary text secondary text secondary text secondary text secondary text "
         android:layout_gravity="bottom"
         android:id="@+id/secondary_text_view"/>
+
+    <TextView
+        style="@style/DefaultTextViewStyle"
+        tools:text="secondary2 text secondary2 text secondary2 text "
+        android:layout_gravity="bottom"
+        android:paddingLeft="50dp"
+        android:id="@+id/secondary2_text_view"/>
 
     <TextView
         style="@style/SecondaryTextViewStyle"

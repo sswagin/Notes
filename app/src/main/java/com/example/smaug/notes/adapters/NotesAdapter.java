@@ -57,6 +57,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         protected TextView mPrimaryTextView;
         @BindView(R.id.secondary_text_view)
         protected TextView mSecondaryTextView;
+        @BindView(R.id.secondary2_text_view)
+        protected TextView mSecondary2TextView;
+
         @BindView(R.id.date_text_view)
         protected TextView mDateTextView;
 
@@ -73,7 +76,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         void bindView(Note note) {
             mPrimaryTextView.setText(note.getTitle());
             mSecondaryTextView.setText(note.getText());
+            mSecondary2TextView.setText(note.getText2());
             mDateTextView.setText(String.valueOf(note.getTime()));
+
         }
     }
 }
